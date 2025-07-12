@@ -1,0 +1,17 @@
+{
+  "name": "bds-ai-chatbot",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "worker"
+  ],
+  "scripts": {
+    "install:all": "npm install --workspaces --include-workspace-root",
+    "dev": "wrangler dev --config worker/wrangler.toml",
+    "build": "npm run build --workspace frontend && wrangler publish --config worker/wrangler.toml"
+  },
+  "devDependencies": {
+    "wrangler": "^3.53.1"
+  }
+}
